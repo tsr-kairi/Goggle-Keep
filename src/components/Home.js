@@ -1,9 +1,16 @@
-// Components
+import { Box } from "@mui/material";
 
+// Components
 import SwipeDrawer from "./SwipeDrawer";
+import Notes from "./notes/Notes";
 
 const Home = () => {
-  return <SwipeDrawer />;
+  return (
+    <Box style={{ width: "100%" }}>
+      <SwipeDrawer />
+      <Notes />
+    </Box>
+  );
 };
 
 export default Home;
