@@ -6,7 +6,7 @@ import Notes from "./notes/Notes";
 
 const Home = () => {
   return (
-    <Box style={{ width: "100%" }}>
+    <Box style={{ display: "flex", width: "100%" }}>
       <SwipeDrawer />
       <Notes />
     </Box>
