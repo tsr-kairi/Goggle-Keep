@@ -9,20 +9,32 @@ import {
   DeleteOutlineOutlined as Delete,
   EditOutlined as Edit,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const NavList = () => {
   const navList = [
-    { id: 1, name: "Notes", icon: <Lightbulb /> },
-    { id: 2, name: "Archive", icon: <Archive /> },
-    { id: 3, name: "Trash", icon: <Delete /> },
-    { id: 4, name: "Edit", icon: <Edit /> },
+    { id: 1, name: "Notes", icon: <Lightbulb />, route: "/" },
+    { id: 2, name: "Archives", icon: <Archive />, route: "/archive" },
+    { id: 3, name: "Trash", icon: <Delete />, route: "/delete" },
+    { id: 4, name: "Edit", icon: <Edit />, route: "/edit" },
   ];
   return (
     <List>
       {navList.map((list) => (
         <ListItem button key={list.id}>
-          <ListItemIcon>{list.icon}</ListItemIcon>
-          <ListItemText primary={list.name} />
+          <Link
+            to={list.route}
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              color: "inherit",
+            }}
+          >
+            <ListItemIcon style={{ alignItems: "center" }}>
+              {list.icon}
+            </ListItemIcon>
+            <ListItemText primary={list.name} />
+          </Link>
         </ListItem>
       ))}
     </List>
